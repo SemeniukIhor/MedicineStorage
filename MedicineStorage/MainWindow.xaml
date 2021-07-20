@@ -1,0 +1,27 @@
+﻿<Window x:Class="MedicineStorage.MainWindow" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedicineStorage"
+        mc:Ignorable="d"
+        Title="Medicine Storage" Height="480" Width="860">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="108*"/>
+            <ColumnDefinition Width="107*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Name="MedicineStorage" FontSize="16" FontWeight="Bold" AutoGenerateColumns="False" Loaded="MedicineStorage_Loaded" Margin="0,25,0,0" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path = Condition}" IsReadOnly="True" Header="Стан преперату" Width="150"/>
+                <DataGridTextColumn Binding="{Binding Path = Name}" IsReadOnly="False" Header="Назва" Width="220"/>
+                <DataGridTextColumn Binding="{Binding Path = Unit}" IsReadOnly="False" Header="Од.Вим" Width="80"/>
+                <DataGridTextColumn Binding="{Binding Path = Cams}" IsReadOnly="False" Header="Прихід" Width="80"/>
+                <DataGridTextColumn Binding="{Binding Path = Go}" IsReadOnly="False" Header="Розхід" Width="80"/>
+                <DataGridTextColumn Binding="{Binding Path = Still}" IsReadOnly="True" Header="Залишок" Width="80"/>
+                <DataGridTextColumn Binding="{Binding Path = Date}" IsReadOnly="False" Header="Термін придатності" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Оновити" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="94" RenderTransformOrigin="0.663,1.305" Click="Button_Click"/>
+    </Grid>
+</Window>
